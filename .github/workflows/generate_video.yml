@@ -1,0 +1,32 @@
+name: Generate HeyGen Video with Claude
+
+on:
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: 'Video topic for Claude to write a script about'
+        required: true
+        default: 'Why AI avatars are the future of video content'
+
+jobs:
+  generate-video:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Generate video with Claude + HeyGen
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          HEYGEN_API_KEY: ${{ secrets.HEYGEN_API_KEY }}
+        run: |
+          python generate_video.py --topic "${{ github.event.inputs.topic }}"
