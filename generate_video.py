@@ -27,9 +27,9 @@ ANTHROPIC_API_URL = "https://api.anthropic.com/v1/messages"
 HEYGEN_API_URL    = "https://api.heygen.com/v2/video/generate"
 HEYGEN_STATUS_URL = "https://api.heygen.com/v1/video_status.get"
 
-# HeyGen avatar & voice IDs - Markus avatar (CustomBoxAgency)
+# HeyGen avatar & voice IDs - Mark avatar (CustomBoxAgency)
 DEFAULT_AVATAR_ID = "f709e79641224f58b8e26ca2be47a900"
-DEFAULT_VOICE_ID  = "1bd001e7e50f421d891986aad5158bc8"  # English female
+DEFAULT_VOICE_ID  = "1bd001e7e50f421d891986aad5158bc8"  # English male
 
 # ---------------------------------------------------------------------------
 # Step 1: Generate script with Claude
